@@ -1,0 +1,16 @@
+..\obj\exit.o: ..\HARDWARE\EXIT\exit.c
+..\obj\exit.o: ..\HARDWARE\ENCODER\encoder.h
+..\obj\exit.o: ..\SYSTEM\sys\sys.h
+..\obj\exit.o: ..\USER\stm32f10x.h
+..\obj\exit.o: ..\CORE\core_cm3.h
+..\obj\exit.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+..\obj\exit.o: ..\USER\system_stm32f10x.h
+..\obj\exit.o: ..\USER\stm32f10x_conf.h
+..\obj\exit.o: ..\STM32F10x_FWLib\inc\stm32f10x_exti.h
+..\obj\exit.o: ..\USER\stm32f10x.h
+..\obj\exit.o: ..\STM32F10x_FWLib\inc\stm32f10x_gpio.h
+..\obj\exit.o: ..\STM32F10x_FWLib\inc\stm32f10x_rcc.h
+..\obj\exit.o: ..\STM32F10x_FWLib\inc\stm32f10x_tim.h
+..\obj\exit.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
+..\obj\exit.o: ..\STM32F10x_FWLib\inc\misc.h
+..\obj\exit.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\math.h

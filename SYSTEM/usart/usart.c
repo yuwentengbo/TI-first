@@ -166,3 +166,35 @@ void USART1_IRQHandler(void)                	//串口1中断服务程序
 #endif	
 
 
+void usart1_send(float num)
+{
+	u8 i,x,y;
+	u8  a[5];
+	/*num = num *1000;
+	u8 data = num;
+	for(i=0;i<10;i++)
+	{
+		while((USART1->SR&0X40)==0);
+		USART1->DR = i;
+	}*/
+	int  data;
+	num = num *1000;
+	data = (int)num;
+	
+	i=4;
+	while(1)
+	{
+		x = data % 10;
+		a[i--] = x ;
+		data = data /10;
+		if(data ==  0)	break;
+	}
+	
+	for(i=i+1;i<5;i++)
+	{
+		while((USART1->SR&0X40)==0);
+			USART1->DR = a[i];
+	}
+	
+}
+

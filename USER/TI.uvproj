@@ -361,7 +361,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\UCOSII\CONFIG;..\UCOSII\CORE;..\UCOSII\PORT;..\HARDWARE\BUJIN;..\HARDWARE\ENCODER;..\HARDWARE\MPU6050;..\HARDWARE\1602;..\HARDWARE\KEY;..\USER;..\HARDWARE\UART2;..\HARDWARE\TIMER;..\HARDWARE\LED;..\HARDWARE\EXTI;..\HARDWARE\ADC</IncludePath>
+              <IncludePath>..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\UCOSII\CONFIG;..\UCOSII\CORE;..\UCOSII\PORT;..\HARDWARE\BUJIN;..\HARDWARE\ENCODER;..\HARDWARE\MPU6050;..\HARDWARE\1602;..\HARDWARE\KEY;..\USER;..\HARDWARE\UART2;..\HARDWARE\TIMER;..\HARDWARE\LED;..\HARDWARE\EXTI;..\HARDWARE\ADC;..\HARDWARE\ENCODER</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -440,29 +440,14 @@
               <FilePath>..\HARDWARE\KEY\key.c</FilePath>
             </File>
             <File>
-              <FileName>uart2.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\UART2\uart2.c</FilePath>
-            </File>
-            <File>
-              <FileName>timer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\TIMER\timer.c</FilePath>
-            </File>
-            <File>
               <FileName>led.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\LED\led.c</FilePath>
             </File>
             <File>
-              <FileName>exti.c</FileName>
+              <FileName>encoder.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\HARDWARE\EXTI\exti.c</FilePath>
-            </File>
-            <File>
-              <FileName>adc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\ADC\adc.c</FilePath>
+              <FilePath>..\HARDWARE\ENCODER\encoder.c</FilePath>
             </File>
           </Files>
         </Group>

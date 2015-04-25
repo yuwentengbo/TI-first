@@ -2,22 +2,23 @@
 #include "delay.h"
 #include "usart.h"
 #include "bujin.h"
-#include "timer.h" 
-//#include  "1602.h"
 #include "tar.h"
 #include "led.h"
-#include "uart2.h"
-#include "exti.h"
+#include "encoder.h"
+
 
 
 /**
-	 串口2		PA9 PA10
-	 按键		PC5,PA0 ,PA15
-	 步进电机：	PC6,7,8,9
-	 外部中断   PC0
-	 ADC        PA1
+	 按键			PC5,PA0 ,PA15
+	 步进电机1：	PA0,1,2,3
+	 步进电机2：    PA4 5 6 7
+	 PC 0 PC 1
+	 PA8 PD2
+	 
 **/
 
+
+void cal(float bujin_cnt);
 
 
 void System_init()
@@ -26,38 +27,48 @@ void System_init()
 	LED_Init();	
 	delay_init();				
 	uart_init(9600);			 
-	uart2_init(115200);			//串口2初始化
 	KEY_Init();					//按键初始化
 	bujin_init();	 			//步进电机初始化
-	exti_init();				//外部中断初始化
-	TIM3_Int_Init(9999,7200);	//定时器3初始化1s
+	encoder_init();
 }
 
  int main(void)
  {	
-	u8  key_value = 0;
-
+	u8  key_value = 0 ,i=0;
+	float  angle,bujin_cnt = 0;
+	int weight=0;
 	System_init();
-	
+	 
 	while(key_value == 0)
 	{
 		key_value = KEY_Scan(0);
 		delay_ms(10);
 	}
-	//TIM_Cmd(TIM3,ENABLE);
-	switch(key_value)
+	
+	while(1)
 	{
-		case KEY0_PRES:		 tar1();	break;
-		case KEY1_PRES:		 tar2();	break;	
-		case WKUP_PRES:		 tar3();	break;
-		default: break;
+		angle = encoder_get_angle();
+		if(angle !=0 && angle < 3 && angle > -3)
+		{
+			LED0  = 0;
+			break;
+		}
+		delay_ms(200);
 	}
 	
-	while(1);
+	
+	bujin_cnt=tar1();	
+
+	cal(bujin_cnt);
 	return 0;
  }
+
+ 
+ void cal(float bujin_cnt)
+{
+	float l1=0,l2=43,weight=0;
+	l1=16.5 *bujin_cnt *0.9/360;
+	weight=l1*0.37/43;
+	usart1_send(weight);
+}
   
-
-
-
-

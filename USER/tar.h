@@ -2,7 +2,7 @@
 #define __TAR_H
 #include "sys.h"
 
-void tar1();
+float tar1();
 void tar2();
 void tar3();
 

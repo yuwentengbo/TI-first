@@ -17,3 +17,8 @@
 ..\obj\tar.o: ..\HARDWARE\LED\led.h
 ..\obj\tar.o: ..\SYSTEM\delay\delay.h
 ..\obj\tar.o: ..\HARDWARE\BUJIN\bujin.h
+..\obj\tar.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\math.h
+..\obj\tar.o: ..\HARDWARE\KEY\key.h
+..\obj\tar.o: ..\SYSTEM\usart\usart.h
+..\obj\tar.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
+..\obj\tar.o: ..\HARDWARE\ENCODER\encoder.h

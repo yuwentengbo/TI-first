@@ -18,8 +18,6 @@
 ..\obj\main.o: ..\SYSTEM\usart\usart.h
 ..\obj\main.o: C:\Keil_v5\ARM\ARMCC\bin\..\include\stdio.h
 ..\obj\main.o: ..\HARDWARE\BUJIN\bujin.h
-..\obj\main.o: ..\HARDWARE\TIMER\timer.h
 ..\obj\main.o: tar.h
 ..\obj\main.o: ..\HARDWARE\LED\led.h
-..\obj\main.o: ..\HARDWARE\UART2\uart2.h
-..\obj\main.o: ..\HARDWARE\EXTI\exti.h
+..\obj\main.o: ..\HARDWARE\ENCODER\encoder.h
